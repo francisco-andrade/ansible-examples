@@ -9,4 +9,7 @@
       command: "wp user get {{ user_name }} --field=display_name"
       args:
         chdir: /clients/www.oln.ca/current/webroot/
+      register: task_result
       tags: wp_cli
+    - name: 'Print output'
+      debug: msg='{{ task_result }}'
