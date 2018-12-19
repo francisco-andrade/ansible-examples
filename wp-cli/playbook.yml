@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: 'wp user get'
-      command: "wp user get {{ user_name }} --field=display_name"
+      command: "wp user get {{ user_name }} --fields=ID,display_name,user_email,user_registered"
       args:
         chdir: /clients/www.oln.ca/current/webroot/
       register: task_result
