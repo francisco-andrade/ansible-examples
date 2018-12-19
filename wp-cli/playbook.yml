@@ -2,7 +2,7 @@
 - name: wordpress 
   tags: wordpress
   hosts: all
-  become: true
+  # become: true
   gather_facts: false
   tasks:
     - name: 'wp user get'
