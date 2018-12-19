@@ -12,4 +12,4 @@
       register: task_result
       tags: wp_cli
     - name: 'Print output'
-      debug: msg='{{ task_result }}'
+      debug: result='{{ task_result.stdout }}'
