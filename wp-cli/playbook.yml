@@ -1,0 +1,10 @@
+---
+- name: wordpress 
+  tags: wordpress
+  hosts: all
+  become: true
+  gather_facts: false
+  tasks:
+    - name: 'Insert variable'
+      command: "wp user get {{ user_name }} --field=display_name"
+      tags: wp_cli
