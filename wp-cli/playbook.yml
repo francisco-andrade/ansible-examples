@@ -7,4 +7,6 @@
   tasks:
     - name: 'Insert variable'
       command: "wp user get {{ user_name }} --field=display_name"
+      args:
+        chdir: /clients/www.oln.ca/current/webroot/
       tags: wp_cli
