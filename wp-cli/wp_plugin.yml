@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: 'wp plugin'
-      command: "wp plugin {{ subcommand }}"
+      command: "wp plugin {{ subcommand }} --format=json"
       args:
         chdir: /clients/www.oln.ca/current/webroot/
       register: task_result
