@@ -5,7 +5,7 @@
   # become: true
   gather_facts: false
   tasks:
-    - name: 'wp user get'
+    - name: 'wp schedule'
       command: "wp schedule {{ subcommand }}"
       args:
         chdir: /clients/www.oln.ca/current/webroot/
