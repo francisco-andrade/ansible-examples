@@ -1,0 +1,15 @@
+---
+- name: wordpress 
+  tags: wordpress
+  hosts: all
+  # become: true
+  gather_facts: false
+  tasks:
+    - name: 'wp user get'
+      command: "wp schedule {{ subcommand }}"
+      args:
+        chdir: /clients/www.oln.ca/current/webroot/
+      register: task_result
+      tags: wp_cli
+    - name: 'Print output'
+      debug: msg='{{ task_result.stdout }}'
