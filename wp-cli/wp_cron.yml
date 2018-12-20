@@ -5,8 +5,8 @@
   # become: true
   gather_facts: false
   tasks:
-    - name: 'wp schedule'
-      command: "wp schedule {{ subcommand }}"
+    - name: 'wp cron'
+      command: "wp cron {{ subcommand }}"
       args:
         chdir: /clients/www.oln.ca/current/webroot/
       register: task_result
