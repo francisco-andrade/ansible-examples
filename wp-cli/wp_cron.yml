@@ -6,10 +6,10 @@
   gather_facts: false
   tasks:
     - name: 'wp cron'
-      command: "wp cron {{ subcommand }}"
+      command: "wp cron {{ subcommand }} --format=json"
       args:
         chdir: /clients/www.oln.ca/current/webroot/
       register: task_result
       tags: wp_cli
     - name: 'Print output'
-      debug: msg='{{ task_result.stdout }}'
+      debug: msg='{{ task_result.stdout | to_nice_json }}'
