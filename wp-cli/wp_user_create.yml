@@ -5,7 +5,7 @@
   # become: true
   gather_facts: false
   tasks:
-    - name: 'wp user get'
+    - name: 'wp user create'
       command: "wp user create {{ user_name }} {{ user_mail }} --role={{ user_role }} {{ extra_params }}"
       args:
         chdir: /clients/www.oln.ca/current/webroot/
